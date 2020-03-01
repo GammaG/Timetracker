@@ -38,13 +38,15 @@ public class TimeController {
 
 
     public void addOneHour() {
-        time.setHours(time.getHours() + 1);
+        time.setHours(time.getHours() + +1);
         updateTextAndDatabase();
     }
 
 
     public void reduceOneHour() {
-        time.setHours(time.getHours() + -1);
+        int hours = time.getHours();
+        if (hours == 0) return;
+        time.setHours(time.getHours() - 1);
         updateTextAndDatabase();
     }
 
@@ -55,8 +57,8 @@ public class TimeController {
         if (minutes >= 60) {
             addOneHour();
             minutes -= 60;
-            time.setMinutes(minutes);
         }
+        time.setMinutes(minutes);
         updateTextAndDatabase();
     }
 
@@ -65,10 +67,14 @@ public class TimeController {
         int minutes = time.getMinutes();
         minutes -= 15;
         if (minutes < 0) {
-            reduceOneHour();
-            minutes = 60 + minutes;
-            time.setMinutes(minutes);
+            if (time.getHours() == 0)
+                minutes = 0;
+            else {
+                reduceOneHour();
+                minutes = 60 + minutes;
+            }
         }
+        time.setMinutes(minutes);
         updateTextAndDatabase();
     }
 
@@ -79,8 +85,8 @@ public class TimeController {
         if (minutes > 60) {
             addOneHour();
             minutes -= 60;
-            time.setMinutes(minutes);
         }
+        time.setMinutes(minutes);
         updateTextAndDatabase();
     }
 
@@ -89,10 +95,14 @@ public class TimeController {
         int minutes = time.getMinutes();
         minutes -= 5;
         if (minutes < 0) {
-            reduceOneHour();
-            minutes = 60 + minutes;
-            time.setMinutes(minutes);
+            if (time.getHours() == 0)
+                minutes = 0;
+            else {
+                reduceOneHour();
+                minutes = 60 + minutes;
+            }
         }
+        time.setMinutes(minutes);
         updateTextAndDatabase();
     }
 

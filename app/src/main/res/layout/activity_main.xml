@@ -86,7 +86,7 @@
             android:orientation="horizontal">
 
             <Button
-                android:id="@+id/addFiveButton"
+                android:id="@+id/addFiveMinutesButton"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:layout_weight="1"
@@ -97,7 +97,7 @@
                 android:textStyle="bold" />
 
             <Button
-                android:id="@+id/reduceFiveButton"
+                android:id="@+id/reduceFiveMinutesButton"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:layout_weight="1"
@@ -108,25 +108,27 @@
                 android:textStyle="bold" />
         </LinearLayout>
 
-        <EditText
-            android:id="@+id/TimeEditText"
+        <LinearLayout
             android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:autofillHints=""
-            android:ems="10"
-            android:inputType="time"
-            android:textAlignment="center"
-            android:textAllCaps="false"
-            android:textColor="#FFFFFF"
-            android:textSize="30sp"
-            android:textStyle="bold"
-            tools:text="00:00" />
+            android:layout_height="match_parent"
+            android:orientation="vertical"
+            android:padding="30px">
 
-        <TextView
-            android:id="@+id/HistoryTextView"
-            android:layout_width="match_parent"
-            android:layout_height="522dp"
-            android:textColor="#FFFFFF" />
+            <EditText
+                android:id="@+id/timeEditText"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:autofillHints=""
+                android:editable="false"
+                android:ems="10"
+                android:inputType="time"
+                android:textAlignment="center"
+                android:textAllCaps="false"
+                android:textColor="#FFFFFF"
+                android:textSize="30sp"
+                android:textStyle="bold"
+                tools:text="00:00" />
+        </LinearLayout>
 
     </LinearLayout>
 

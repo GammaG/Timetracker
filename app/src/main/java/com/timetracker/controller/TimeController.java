@@ -45,8 +45,9 @@ public class TimeController {
 
     public void reduceOneHour() {
         int hours = time.getHours();
-        if (hours == 0) return;
-        time.setHours(time.getHours() - 1);
+        if (hours == 0) {
+            time.setMinutes(0);
+        } else time.setHours(time.getHours() - 1);
         updateTextAndDatabase();
     }
 

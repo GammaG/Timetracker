@@ -34,6 +34,7 @@ public class MainActivity extends AppCompatActivity {
 
     private void initializeUIElements() {
         timeEditText = findViewById(R.id.timeEditText);
+        timeEditText.setFocusable(false);
         addHourButton = findViewById(R.id.addHourButton);
         reduceHourButton = findViewById(R.id.reduceHourButton);
         addQuarterButton = findViewById(R.id.addQuarterButton);

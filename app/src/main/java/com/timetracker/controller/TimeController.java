@@ -83,9 +83,9 @@ public class TimeController {
     public void addFiveMinutes() {
         int minutes = time.getMinutes();
         minutes += 5;
-        if (minutes > 60) {
+        if (minutes >= 60) {
             addOneHour();
-            minutes -= 60;
+            minutes = 0;
         }
         time.setMinutes(minutes);
         updateTextAndDatabase();

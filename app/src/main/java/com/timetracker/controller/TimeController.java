@@ -9,8 +9,8 @@ import com.timetracker.model.TimeDao;
 
 public class TimeController {
 
-    private DaoSession mDaoSession;
-    private EditText timeEditText;
+    private final DaoSession mDaoSession;
+    private final EditText timeEditText;
     private TimeDao timeDao;
     private Time time;
 
